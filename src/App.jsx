@@ -1,59 +1,122 @@
-export default function ItachiBirthdaySite() {
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from './assets/vite.svg'
+import heroImg from './assets/hero.png'
+import './App.css'
+
+function App() {
+  const [count, setCount] = useState(0)
+
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden relative font-sans">
-      
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-red-950 to-black opacity-95"></div>
-
-      {/* Glow */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-red-700 rounded-full blur-3xl opacity-20"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-900 rounded-full blur-3xl opacity-20"></div>
-
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center">
-
-        <div className="backdrop-blur-md bg-black/40 border border-red-700 rounded-3xl shadow-2xl p-10 max-w-3xl w-full">
-
-          <p className="text-red-500 tracking-[0.4em] uppercase text-sm mb-4">
-            Akatsuki Birthday Transmission
-          </p>
-
-          <h1 className="text-5xl md:text-7xl font-extrabold text-red-600 mb-4">
-            Happy Birthday
-          </h1>
-
-          <h2 className="text-4xl font-bold mb-8 text-white">
-            Your Friend Name
-          </h2>
-
-          <div className="border-l-4 border-red-700 pl-4 italic text-gray-300 text-lg mb-8 text-left">
-            “People live their lives bound by what they accept as correct and true.”
-            <br />
-            <span className="text-red-500">— Itachi Uchiha</span>
-          </div>
-
-          <p className="text-gray-300 mb-8">
-            May your journey be filled with strength and success.
-          </p>
-
-          <div className="flex justify-center mb-8">
-            <div className="w-28 h-28 rounded-full border-4 border-red-700 flex items-center justify-center animate-spin"
-              style={{ animationDuration: "15s" }}>
-              <div className="text-red-600 text-5xl font-bold">暁</div>
-            </div>
-          </div>
-
-          <button className="bg-red-700 hover:bg-red-600 px-8 py-4 rounded-2xl font-bold">
-            Enter The Akatsuki
-          </button>
-
+    <>
+      <section id="center">
+        <div className="hero">
+          <img src={heroImg} className="base" width="170" height="179" alt="" />
+          <img src={reactLogo} className="framework" alt="React logo" />
+          <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
+        <div>
+          <h1>Get started</h1>
+          <p>
+            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+          </p>
+        </div>
+        <button
+          type="button"
+          className="counter"
+          onClick={() => setCount((count) => count + 1)}
+        >
+          Count is {count}
+        </button>
+      </section>
 
-        <p className="mt-10 text-gray-500 text-sm uppercase">
-          Created with the will of fire 🔥
-        </p>
+      <div className="ticks"></div>
 
-      </div>
-    </div>
-  );
+      <section id="next-steps">
+        <div id="docs">
+          <svg className="icon" role="presentation" aria-hidden="true">
+            <use href="/icons.svg#documentation-icon"></use>
+          </svg>
+          <h2>Documentation</h2>
+          <p>Your questions, answered</p>
+          <ul>
+            <li>
+              <a href="https://vite.dev/" target="_blank">
+                <img className="logo" src={viteLogo} alt="" />
+                Explore Vite
+              </a>
+            </li>
+            <li>
+              <a href="https://react.dev/" target="_blank">
+                <img className="button-icon" src={reactLogo} alt="" />
+                Learn more
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div id="social">
+          <svg className="icon" role="presentation" aria-hidden="true">
+            <use href="/icons.svg#social-icon"></use>
+          </svg>
+          <h2>Connect with us</h2>
+          <p>Join the Vite community</p>
+          <ul>
+            <li>
+              <a href="https://github.com/vitejs/vite" target="_blank">
+                <svg
+                  className="button-icon"
+                  role="presentation"
+                  aria-hidden="true"
+                >
+                  <use href="/icons.svg#github-icon"></use>
+                </svg>
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://chat.vite.dev/" target="_blank">
+                <svg
+                  className="button-icon"
+                  role="presentation"
+                  aria-hidden="true"
+                >
+                  <use href="/icons.svg#discord-icon"></use>
+                </svg>
+                Discord
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/vite_js" target="_blank">
+                <svg
+                  className="button-icon"
+                  role="presentation"
+                  aria-hidden="true"
+                >
+                  <use href="/icons.svg#x-icon"></use>
+                </svg>
+                X.com
+              </a>
+            </li>
+            <li>
+              <a href="https://bsky.app/profile/vite.dev" target="_blank">
+                <svg
+                  className="button-icon"
+                  role="presentation"
+                  aria-hidden="true"
+                >
+                  <use href="/icons.svg#bluesky-icon"></use>
+                </svg>
+                Bluesky
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div className="ticks"></div>
+      <section id="spacer"></section>
+    </>
+  )
 }
+
+export default App
